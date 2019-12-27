@@ -7,14 +7,12 @@ import SearchItem from './SearchItem';
 //   return <div></div>;
 // };
 
-const Searchresult = ({ getData, result: { results, loading } }) => {
+const Searchresult = ({ getData, results }) => {
   useEffect(() => {
     getData();
   }, [getData]);
 
-  return loading ? (
-    <p>waiting for a search</p>
-  ) : (
+  return (
     <Fragment>
       <h1 className='large text-primary'>Search results</h1>
       <p className='lead'>
@@ -32,11 +30,11 @@ const Searchresult = ({ getData, result: { results, loading } }) => {
 
 Searchresult.propTypes = {
   getData: PropTypes.func.isRequired,
-  result: PropTypes.object.isRequired
+  results: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  result: state.result
+  results: state.results
 });
 
 export default connect(mapStateToProps, { getData })(Searchresult);
