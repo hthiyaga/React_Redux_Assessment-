@@ -7,23 +7,26 @@ import SearchItem from './SearchItem';
 //   return <div></div>;
 // };
 
-const Searchresult = ({ getData, results }) => {
+const Searchresult = ({ getData, results, loading }) => {
   useEffect(() => {
     getData();
   }, [getData]);
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Search results</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> HN API results
-      </p>
+      {loading ? (
+        <p>Yet to search</p>
+      ) : (
+        <Fragment>
+          <h4 className='large text-primary'>Search results</h4>
 
-      <div className='posts'>
-        {results.map(result => (
-          <SearchItem key={result._id} result={result} />
-        ))}
-      </div>
+          <div className='posts'>
+            {/* {results.map(result => (
+              <SearchItem key={result._id} result={result} />
+            ))} */}
+          </div>
+        </Fragment>
+      )}
     </Fragment>
   );
 };
