@@ -1,22 +1,23 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getData } from '../actions/search';
+import { getData, saveSearch } from '../actions/search';
 import Searchresult from './Searchresult';
-const Search = ({ getData }) => {
+const Search = ({ getData, saveSearch }) => {
   const [text, setText] = useState('');
 
   return (
     <Fragment>
       <div className='post-form'>
         <div className='bg-primary p'>
-          <h3>HIT THE API</h3>
+          <h3>Fetching Data from Hacker News API</h3>
         </div>
         <form
           className='form my-1'
           onSubmit={e => {
             e.preventDefault();
             getData(text);
+            saveSearch(text);
             setText('');
           }}
         >
@@ -38,7 +39,8 @@ const Search = ({ getData }) => {
 };
 
 Search.propTypes = {
-  getData: PropTypes.func.isRequired
+  getData: PropTypes.func.isRequired,
+  saveSearch: PropTypes.func.isRequired
 };
 
-export default connect(null, { getData })(Search);
+export default connect(null, { getData, saveSearch })(Search);

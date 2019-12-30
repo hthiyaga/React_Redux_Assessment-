@@ -1,22 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
-const SearchItem = ({ result: { title, url, author, story } }) => {
+const SearchItem = ({ result: { title, url } }) => {
   return (
     <p className='search_result bg-light'>
       <p>
-        <h2>{title}</h2>
+        <span>{title}</span>
         <p>
-          <Link to={url} className='btn btn-primary'>
-            {url}
-          </Link>
-        </p>
-        <p className='my-1'>
-          <span>{author}</span>
-        </p>
-        <p>
-          <span>{story}</span>
+          <a href={url} rel='noopener noreferrer' className='btn btn-primary'>
+            View the site
+          </a>
         </p>
       </p>
     </p>

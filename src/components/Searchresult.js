@@ -7,7 +7,7 @@ import SearchItem from './SearchItem';
 //   return <div></div>;
 // };
 
-const Searchresult = ({ getData, results, loading }) => {
+const Searchresult = ({ getData, search: { results, loading } }) => {
   useEffect(() => {
     getData();
   }, [getData]);
@@ -18,12 +18,12 @@ const Searchresult = ({ getData, results, loading }) => {
         <p>Yet to search</p>
       ) : (
         <Fragment>
-          <h4 className='large text-primary'>Search results</h4>
+          <p className='large text-primary'>Search results</p>
 
           <div className='posts'>
-            {/* {results.map(result => (
-              <SearchItem key={result._id} result={result} />
-            ))} */}
+            {results.hits.map(result => (
+              <SearchItem key={result.hits} result={result} />
+            ))}
           </div>
         </Fragment>
       )}
@@ -33,11 +33,11 @@ const Searchresult = ({ getData, results, loading }) => {
 
 Searchresult.propTypes = {
   getData: PropTypes.func.isRequired,
-  results: PropTypes.object.isRequired
+  search: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  results: state.results
+  search: state.search
 });
 
 export default connect(mapStateToProps, { getData })(Searchresult);

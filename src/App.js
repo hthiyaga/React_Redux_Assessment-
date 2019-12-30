@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <p>RTS_LABSs</p>
+        <p>RTS_LABS_ASSESSMENT</p>
         <Provider store={store}>
           <Router>
             <Fragment>
