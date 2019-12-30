@@ -9,11 +9,11 @@ const Search = ({ getData, saveSearch }) => {
   return (
     <Fragment>
       <div className='post-form'>
-        <div className='bg-primary p'>
-          <h3>Fetching Data from Hacker News API</h3>
+        <div className='heading'>
+          <h3>Fetching Title and URL from Hacker News API </h3>
         </div>
         <form
-          className='form my-1'
+          className='form search'
           onSubmit={e => {
             e.preventDefault();
             getData(text);
@@ -22,7 +22,7 @@ const Search = ({ getData, saveSearch }) => {
           }}
         >
           <input
-            type='name'
+            type='text'
             placeholder='Search an item'
             name='search'
             value={text}
@@ -30,7 +30,7 @@ const Search = ({ getData, saveSearch }) => {
             required
           />
           <br></br>
-          <input type='submit' className='btn btn-dark my-1' value='Submit' />
+          <input type='submit' className='btn' value='Submit' />
         </form>
       </div>
       <Searchresult />

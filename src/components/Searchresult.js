@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getData } from '../actions/search';
 import SearchItem from './SearchItem';
-// export const Searchresult = () => {
-//   return <div></div>;
-// };
 
 const Searchresult = ({ getData, search: { results, loading } }) => {
   useEffect(() => {
@@ -18,11 +15,11 @@ const Searchresult = ({ getData, search: { results, loading } }) => {
         <p>Yet to search</p>
       ) : (
         <Fragment>
-          <p className='large text-primary'>Search results</p>
+          <p>Search results</p>
 
-          <div className='posts'>
+          <div>
             {results.hits.map(result => (
-              <SearchItem key={result.hits} result={result} />
+              <SearchItem key={result.created_at} result={result} />
             ))}
           </div>
         </Fragment>

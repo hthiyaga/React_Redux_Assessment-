@@ -4,16 +4,22 @@ import PropTypes from 'prop-types';
 
 const SearchItem = ({ result: { title, url } }) => {
   return (
-    <p className='search_result bg-light'>
-      <p>
+    <div>
+      <div className='search_result'>
+        <h5>Title</h5>
         <span>{title}</span>
         <p>
-          <a href={url} rel='noopener noreferrer' className='btn btn-primary'>
-            View the site
-          </a>
+          {url ? (
+            <a href={url} rel='noopener noreferrer' target='_blank'>
+              View the site
+            </a>
+          ) : (
+            <span className='nourl'> No url found:(</span>
+          )}
         </p>
-      </p>
-    </p>
+      </div>
+      <br></br>
+    </div>
   );
 };
 

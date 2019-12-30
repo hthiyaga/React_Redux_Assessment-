@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: helvetica;
 }
 
 .App-logo {
@@ -18,13 +19,53 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: #252121;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.heading {
+  color: #252121;
+}
+
+.form .search {
+  display: flex;
+}
+
+.form input[type='text'] {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.search_result {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+.btn {
+  display: inline-block;
+  background: #dadfe0;
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 5%;
+}
+
+.nourl {
+  color: red;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
