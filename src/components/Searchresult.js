@@ -16,7 +16,6 @@ const Searchresult = ({ getData, search: { results, loading } }) => {
       ) : (
         <Fragment>
           <p>Search results</p>
-
           <div>
             {results.hits.map(result => (
               <SearchItem key={result.created_at} result={result} />
