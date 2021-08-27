@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import History from './components/History';
 import Search from './components/Search';
 import './App.css';
 import { Provider } from 'react-redux';
@@ -14,6 +15,7 @@ function App() {
             <Fragment>
               <Switch>
                 <Route exact path='/' component={Search} />
+                <Route exact path='/history' component={History} />
               </Switch>
             </Fragment>
           </Router>

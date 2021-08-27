@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import search from './search';
-import savesearch from './savesearch';
+import history from './history';
 
 export default combineReducers({
   search,
-  savesearch
+  history
 });

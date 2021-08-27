@@ -4,11 +4,8 @@ import { connect } from 'react-redux';
 import { getData } from '../actions/search';
 import SearchItem from './SearchItem';
 
-const Searchresult = ({ getData, search: { results, loading } }) => {
-  useEffect(() => {
-    getData();
-  }, [getData]);
-
+const Searchresult = ({ search: { results, loading } }) => {
+ 
   return (
     <Fragment>
       {loading ? (
@@ -28,7 +25,6 @@ const Searchresult = ({ getData, search: { results, loading } }) => {
 };
 
 Searchresult.propTypes = {
-  getData: PropTypes.func.isRequired,
   search: PropTypes.object.isRequired
 };
 
@@ -36,4 +32,4 @@ const mapStateToProps = state => ({
   search: state.search
 });
 
-export default connect(mapStateToProps, { getData })(Searchresult);
+export default connect(mapStateToProps)(Searchresult);

@@ -1,7 +1,7 @@
 import { GET_DATA, SEARCH_ERROR } from '../actions/types';
 
 const initialState = {
-  results: [],
+  results: {},
   loading: true,
   error: {}
 };

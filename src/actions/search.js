@@ -12,7 +12,7 @@ export const getData = searchitem => async dispatch => {
   if (searchitem !== undefined) {
     try {
       const res = await axios.get(
-        `http://hn.algolia.com/api/v1/search_by_date?query=${searchitem}&tags=story`,
+        `http://hn.algolia.com/api/v1/search?query=${searchitem}&tags=story`,
 
         config
       );

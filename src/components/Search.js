@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getData, saveSearch } from '../actions/search';
@@ -32,6 +33,10 @@ const Search = ({ getData, saveSearch }) => {
           <br></br>
           <input type='submit' className='btn' value='Submit' />
         </form>
+      </div>
+      <div>
+        <br></br>
+        <Link to='/history'>VIew History</Link>
       </div>
       <Searchresult />
     </Fragment>
